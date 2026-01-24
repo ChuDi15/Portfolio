@@ -9,6 +9,7 @@ Portfolio moderno y profesional desarrollado con las últimas tecnologías del e
 - **Vite** - Build tool ultrarrápido con HMR instantáneo
 - **SCSS/Sass** - Preprocesador CSS con módulos para estilos encapsulados
 - **CSS Modules** - Scoped styling para evitar conflictos
+- **EmailJS** - Servicio de emails para formulario de contacto funcional
 
 ## 📋 Características Principales
 
@@ -24,6 +25,7 @@ Portfolio moderno y profesional desarrollado con las últimas tecnologías del e
 - **High contrast color scheme** (Negro, Blanco, Gris, Azul Metálico)
 - **Efectos visuales modernos**: glow effects, shimmer text, glassmorphism
 - **Navegación activa** con detección automática de sección visible
+- **Formulario de contacto funcional** con envío de emails mediante EmailJS
 
 ### Optimizaciones
 - Code splitting automático por rutas
@@ -56,19 +58,34 @@ npm install
    - Coloca tu foto de perfil en `src/assets/avatar.jpg`
    - Las imágenes deben estar en formato JPG, PNG o WEBP
 
-4. **Desarrollo local**
+4. **Configurar variables de entorno**
+   
+   Crea un archivo `.env` en la raíz del proyecto con tus credenciales de EmailJS:
+   ```bash
+   VITE_EMAILJS_SERVICE_ID=tu_service_id
+   VITE_EMAILJS_TEMPLATE_ID=tu_template_id
+   VITE_EMAILJS_PUBLIC_KEY=tu_public_key
+   ```
+   
+   Para obtener estas credenciales:
+   - Crea una cuenta gratuita en [EmailJS](https://www.emailjs.com/)
+   - Configura un servicio de email (Outlook, Gmail, etc.)
+   - Crea una plantilla de email
+   - Copia tus IDs desde el dashboard
+
+5. **Desarrollo local**
 ```bash
 npm run dev
 ```
 El proyecto estará disponible en `http://localhost:5173/`
 
-5. **Build para producción**
+6. **Build para producción**
 ```bash
 npm run build
 ```
 Los archivos compilados estarán en `/dist`
 
-6. **Preview del build**
+7. **Preview del build**
 ```bash
 npm run preview
 ```
@@ -168,6 +185,7 @@ Los estilos están organizados por componente usando CSS Modules. Para modificar
 | TypeScript | 5.x | Type Safety |
 | Vite | 7.x | Build Tool |
 | Sass | Latest | CSS Preprocessor |
+| EmailJS | Latest | Email Service |
 
 ## 📝 Scripts Disponibles
 
@@ -191,6 +209,13 @@ Todas las animaciones usan propiedades CSS optimizadas para GPU (transform, opac
 
 ### Type Safety
 TypeScript configurado con strict mode para catching de errores en tiempo de desarrollo.
+
+### Formulario de Contacto Funcional
+Integración con EmailJS para envío real de emails desde el formulario de contacto. Los mensajes son enviados directamente al email configurado sin necesidad de backend propio. Incluye:
+- Validación de campos obligatorios
+- Estados de carga, éxito y error
+- Variables de entorno para seguridad de credenciales
+- Límite gratuito de 200 emails/mes
 
 ## 📄 Licencia
 
