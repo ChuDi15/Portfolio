@@ -90,14 +90,7 @@ const Contact = () => {
 
         <div className={styles.content}>
           <div className={styles.info}>
-            <div className={styles.infoCard}>
-              <div className={styles.cardIcon}>📧</div>
-              <h3 className={styles.cardTitle}>Email</h3>
-              <p className={styles.cardText}>DanielD2011@outlook.com</p>
-              <a href="DanielD2011@outlook.com" className={styles.cardLink}>
-                Send a message →
-              </a>
-            </div>
+            
 
             <div className={styles.infoCard}>
               <div className={styles.cardIcon}>💼</div>

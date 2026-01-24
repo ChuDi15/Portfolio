@@ -13,6 +13,10 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+
+  @media (max-width: $breakpoint-sm) {
+    font-size: 14px;
+  }
 }
 
 body {
@@ -92,11 +96,23 @@ a {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 $spacing-md;
+
+  @media (max-width: $breakpoint-sm) {
+    padding: 0 $spacing-sm;
+  }
 }
 
 .section {
   padding: $spacing-xl 0;
   position: relative;
+
+  @media (max-width: $breakpoint-md) {
+    padding: $spacing-lg 0;
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    padding: $spacing-md 0;
+  }
 }
 
 .section-title {

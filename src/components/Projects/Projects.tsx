@@ -17,13 +17,13 @@ const Projects = () => {
     {
       title: 'Operator Management System',
       description: 'Complete web application for Iberia operators with real-time data synchronization, built with React and integrated with backend services.',
-      technologies: ['React', 'TypeScript', 'Redux', 'REST API'],
+      technologies: ['React', 'TypeScript', 'REST API'],
       category: 'Web App'
     },
     {
       title: 'Flight Tracking Dashboard',
       description: 'Real-time flight monitoring dashboard with interactive data visualization and alert systems for aviation operations.',
-      technologies: ['Angular', 'RxJS', 'D3.js', 'WebSocket'],
+      technologies: ['Angular', 'RxJS', 'PrimeNG', 'WebSocket'],
       category: 'Dashboard'
     },
     {

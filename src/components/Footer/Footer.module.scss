@@ -7,6 +7,10 @@
   border-top: 2px solid $color-gray;
   position: relative;
 
+  @media (max-width: $breakpoint-sm) {
+    padding: $spacing-md 0 $spacing-sm;
+  }
+
   &::before {
     content: '';
     position: absolute;
@@ -29,6 +33,13 @@
   flex-wrap: wrap;
   gap: $spacing-md;
   margin-bottom: $spacing-md;
+
+  @media (max-width: $breakpoint-sm) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: $spacing-sm;
+  }
 }
 
 .left {
