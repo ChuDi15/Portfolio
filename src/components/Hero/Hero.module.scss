@@ -383,6 +383,10 @@
   color: $color-gray-light;
   animation: bounce 2s infinite;
 
+  @media (max-width: $breakpoint-md) {
+    display: none;
+  }
+
   p {
     font-size: $font-size-sm;
     text-transform: uppercase;
