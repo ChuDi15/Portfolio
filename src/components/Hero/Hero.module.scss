@@ -9,6 +9,17 @@
   position: relative;
   overflow: hidden;
   padding: $spacing-xl $spacing-md;
+
+  @media (max-width: $breakpoint-md) {
+    padding: $spacing-lg $spacing-md;
+    min-height: auto;
+    padding-top: 100px;
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    padding: $spacing-md $spacing-sm;
+    padding-top: 80px;
+  }
 }
 
 .background {
@@ -91,6 +102,10 @@
   font-size: $font-size-lg;
   color: $color-gray-light;
   font-weight: 500;
+
+  @media (max-width: $breakpoint-sm) {
+    font-size: $font-size-base;
+  }
 }
 
 .wave {
@@ -138,6 +153,17 @@
   white-space: nowrap;
   overflow: hidden;
   animation: typing 3.5s steps(40, end), blink 0.75s step-end infinite;
+
+  @media (max-width: $breakpoint-md) {
+    font-size: $font-size-lg;
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    font-size: $font-size-base;
+    white-space: normal;
+    border-right: none;
+    animation: none;
+  }
 }
 
 @keyframes typing {
@@ -163,6 +189,11 @@
   color: $color-gray-light;
   line-height: 1.8;
   max-width: 600px;
+
+  @media (max-width: $breakpoint-sm) {
+    font-size: $font-size-base;
+    line-height: 1.6;
+  }
 }
 
 .cta {
@@ -179,6 +210,12 @@
   font-size: $font-size-base;
   border-radius: 4px;
   min-width: 160px;
+
+  @media (max-width: $breakpoint-sm) {
+    padding: $spacing-xs $spacing-md;
+    font-size: $font-size-sm;
+    min-width: 140px;
+  }
 }
 
 .btnPrimary {
