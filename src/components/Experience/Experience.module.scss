@@ -1,0 +1,301 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.experience {
+  padding: $spacing-xl 0;
+  background: $color-gray-dark;
+  position: relative;
+
+  &.visible {
+    .timelineItem {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+}
+
+.title {
+  text-align: center;
+  font-size: $font-size-3xl;
+  margin-bottom: $spacing-sm;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: $gradient-primary;
+  }
+}
+
+.subtitle {
+  text-align: center;
+  color: $color-gray-light;
+  font-size: $font-size-lg;
+  margin-bottom: $spacing-xl;
+}
+
+.timeline {
+  position: relative;
+  padding: $spacing-md 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: $gradient-primary;
+
+    @include respond-to('md') {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+.timelineItem {
+  position: relative;
+  margin-bottom: $spacing-xl;
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: slideInLeft 0.8s ease-out forwards;
+
+  @include respond-to('md') {
+    width: 50%;
+    padding-right: $spacing-lg;
+
+    &:nth-child(even) {
+      margin-left: auto;
+      padding-right: 0;
+      padding-left: $spacing-lg;
+      transform: translateX(50px);
+      animation: slideInRight 0.8s ease-out forwards;
+
+      .timelineDot {
+        left: auto;
+        right: -40px;
+
+        @include respond-to('md') {
+          left: 0px;
+          right: auto;
+        }
+      }
+
+      .card {
+        &::before {
+          left: auto;
+          right: -20px;
+          border-left: 20px solid $color-gray;
+          border-right: none;
+
+          @include respond-to('md') {
+            left: -20px;
+            right: auto;
+            border-left: none;
+            border-right: 20px solid $color-gray;
+          }
+        }
+      }
+    }
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@keyframes slideInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.timelineDot {
+  position: absolute;
+  left: 35px;
+  top: 20px;
+  width: 30px;
+  height: 30px;
+  background: $color-black;
+  border: 3px solid $color-blue-metallic;
+  border-radius: 50%;
+  @include flex-center;
+  z-index: 2;
+
+  @include respond-to('md') {
+    left: 100%;
+    transform: translateX(-50%);
+  }
+}
+
+.dotInner {
+  width: 12px;
+  height: 12px;
+  background: $color-blue-metallic;
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.card {
+  background: $color-black;
+  border: 2px solid $color-gray;
+  border-radius: 12px;
+  padding: $spacing-md;
+  margin-left: 60px;
+  position: relative;
+  transition: all $transition-medium;
+
+  @include respond-to('md') {
+    margin-left: 0;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 20px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 20px solid $color-gray;
+  }
+
+  &:hover {
+    border-color: $color-blue-metallic;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba($color-blue-metallic, 0.2);
+
+    &::before {
+      border-right-color: $color-blue-metallic;
+    }
+  }
+}
+
+.cardHeader {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+  margin-bottom: $spacing-md;
+  padding-bottom: $spacing-md;
+  border-bottom: 1px solid $color-gray;
+
+  @include respond-to('md') {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+.cardTitle {
+  flex: 1;
+
+  h3 {
+    font-size: $font-size-xl;
+    color: $color-white;
+    margin-bottom: $spacing-xs;
+  }
+}
+
+.company {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+  color: $color-blue-metallic;
+  font-weight: 600;
+  font-size: $font-size-base;
+}
+
+.companyIcon {
+  font-size: $font-size-lg;
+}
+
+.period {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+  color: $color-gray-light;
+  font-size: $font-size-sm;
+  white-space: nowrap;
+}
+
+.periodIcon {
+  font-size: $font-size-base;
+}
+
+.cardBody {
+  @include flex-column;
+  gap: $spacing-md;
+}
+
+.descriptionList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    position: relative;
+    padding-left: $spacing-md;
+    margin-bottom: $spacing-sm;
+    color: $color-gray-light;
+    line-height: 1.6;
+
+    &::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: $color-blue-metallic;
+      font-weight: 700;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-xs;
+  margin-top: $spacing-sm;
+}
+
+.tech {
+  padding: $spacing-xs $spacing-sm;
+  background: $color-gray-dark;
+  border: 1px solid $color-gray;
+  border-radius: 4px;
+  font-size: $font-size-sm;
+  color: $color-blue-metallic;
+  font-weight: 500;
+  transition: all $transition-fast;
+
+  &:hover {
+    background: $color-blue-metallic;
+    color: $color-white;
+    transform: translateY(-2px);
+  }
+}

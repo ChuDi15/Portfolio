@@ -1,0 +1,158 @@
+@import './variables';
+@import './mixins';
+
+// Reset and base styles
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: $font-primary;
+  background-color: $color-black;
+  color: $color-white;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Selection
+::selection {
+  background-color: $color-blue-metallic;
+  color: $color-white;
+}
+
+// Scrollbar
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: $color-black;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $color-gray;
+  border-radius: 5px;
+  
+  &:hover {
+    background: $color-blue-metallic;
+  }
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: $spacing-sm;
+}
+
+h1 {
+  font-size: $font-size-4xl;
+  
+  @include respond-to('md') {
+    font-size: calc($font-size-4xl * 1.5);
+  }
+}
+
+h2 {
+  font-size: $font-size-3xl;
+}
+
+h3 {
+  font-size: $font-size-2xl;
+}
+
+p {
+  margin-bottom: $spacing-sm;
+}
+
+a {
+  color: $color-blue-metallic;
+  text-decoration: none;
+  transition: color $transition-fast;
+  
+  &:hover {
+    color: $color-blue-light;
+  }
+}
+
+// Utility classes
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+}
+
+.section {
+  padding: $spacing-xl 0;
+  position: relative;
+}
+
+.section-title {
+  font-size: $font-size-3xl;
+  text-align: center;
+  margin-bottom: $spacing-lg;
+  position: relative;
+  
+  &::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: $gradient-primary;
+    margin: $spacing-md auto 0;
+  }
+}
+
+// Button styles
+.btn {
+  @include button-base;
+  display: inline-block;
+  text-align: center;
+  
+  &-primary {
+    background: $gradient-primary;
+    color: $color-white;
+    
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba($color-blue-metallic, 0.3);
+    }
+  }
+  
+  &-outline {
+    background: transparent;
+    border: 2px solid $color-blue-metallic;
+    color: $color-blue-metallic;
+    
+    &:hover {
+      background: $color-blue-metallic;
+      color: $color-white;
+    }
+  }
+}
+
+// Grid utilities
+.grid {
+  display: grid;
+  gap: $spacing-md;
+  
+  &-2 {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  
+  &-3 {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
