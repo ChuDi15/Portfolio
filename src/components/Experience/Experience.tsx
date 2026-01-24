@@ -38,7 +38,7 @@ const Experience = () => {
         'Developed full-stack curiosity, learning Nest.js and understanding project infrastructure',
         'Mastered E2E testing with Cypress.io and deployment workflows management'
       ],
-      technologies: ['Angular', 'React', 'Tailwind', 'Node.js', 'Nest.js', 'Cypress', 'TypeScript']
+      technologies: ['Angular', 'React', 'Vite', 'Tailwind', 'Node.js', 'Nest.js', 'Cypress', 'TypeScript']
     },
     {
       title: 'Front-end Developer',
