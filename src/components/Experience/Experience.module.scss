@@ -193,6 +193,11 @@
   position: relative;
   transition: all $transition-medium;
 
+  @media (max-width: $breakpoint-sm) {
+    margin-left: 45px;
+    padding: $spacing-sm;
+  }
+
   @include respond-to('md') {
     margin-left: 0;
   }
@@ -242,6 +247,10 @@
     font-size: $font-size-xl;
     color: $color-white;
     margin-bottom: $spacing-xs;
+
+    @media (max-width: $breakpoint-sm) {
+      font-size: $font-size-lg;
+    }
   }
 }
 
@@ -252,6 +261,10 @@
   color: $color-blue-metallic;
   font-weight: 600;
   font-size: $font-size-base;
+
+  @media (max-width: $breakpoint-sm) {
+    font-size: $font-size-sm;
+  }
 }
 
 .companyIcon {
@@ -265,6 +278,11 @@
   color: $color-gray-light;
   font-size: $font-size-sm;
   white-space: nowrap;
+
+  @media (max-width: $breakpoint-sm) {
+    white-space: normal;
+    font-size: 0.75rem;
+  }
 }
 
 .periodIcon {
@@ -287,6 +305,14 @@
     margin-bottom: $spacing-sm;
     color: $color-gray-light;
     line-height: 1.6;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+
+    @media (max-width: $breakpoint-sm) {
+      padding-left: $spacing-sm;
+      font-size: $font-size-sm;
+      line-height: 1.5;
+    }
 
     &::before {
       content: '▹';
@@ -318,6 +344,11 @@
   color: $color-blue-metallic;
   font-weight: 500;
   transition: all $transition-fast;
+
+  @media (max-width: $breakpoint-sm) {
+    padding: 4px 8px;
+    font-size: 0.7rem;
+  }
 
   &:hover {
     background: $color-blue-metallic;
