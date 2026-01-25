@@ -58,7 +58,7 @@ const About = () => {
               <h3 className={styles.subtitle}>{t.about.subtitle}</h3>
               {t.about.description.map((paragraph, index) => (
                 <p key={index} className={styles.description}>
-                  {parse(paragraph.replace(/class=/g, 'className='))}
+                  {parse(paragraph)}
                 </p>
               ))}
             </div>
