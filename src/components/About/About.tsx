@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import parse from 'html-react-parser';
 import { useLanguage } from '../../contexts/LanguageContext';
 import styles from './About.module.scss';
 import avatarImage from '../../assets/avatar.jpg';
@@ -29,10 +30,6 @@ const About = () => {
     };
   }, []);
 
-  const createMarkup = (html: string) => {
-    return { __html: html.replace(/class=/g, 'className=') };
-  };
-
   return (
     <section 
       id="about" 
@@ -60,11 +57,9 @@ const About = () => {
             <div className={styles.intro}>
               <h3 className={styles.subtitle}>{t.about.subtitle}</h3>
               {t.about.description.map((paragraph, index) => (
-                <p 
-                  key={index} 
-                  className={styles.description}
-                  dangerouslySetInnerHTML={createMarkup(paragraph)}
-                />
+                <p key={index} className={styles.description}>
+                  {parse(paragraph.replace(/class=/g, 'className='))}
+                </p>
               ))}
             </div>
 

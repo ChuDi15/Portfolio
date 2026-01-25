@@ -56,9 +56,11 @@ const Projects = () => {
               className={`${styles.filterBtn} ${filter === category ? styles.active : ''}`}
               onClick={() => setFilter(category)}
             >
-              {category === 'all' 
-                ? t.projects.categories.all 
-                : t.projects.categories[category as keyof typeof t.projects.categories] || category}
+              {category === 'all'
+                ? t.projects.categories.all
+                : (category in t.projects.categories
+                  ? t.projects.categories[category as keyof typeof t.projects.categories]
+                  : category)}
             </button>
           ))}
         </div>

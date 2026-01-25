@@ -1,13 +1,10 @@
+import parse from 'html-react-parser';
 import { useLanguage } from '../../contexts/LanguageContext';
 import styles from './Footer.module.scss';
 
 const Footer = () => {
   const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
-
-  const createMarkup = (html: string) => {
-    return { __html: html };
-  };
 
   return (
     <footer className={styles.footer}>
@@ -37,10 +34,9 @@ const Footer = () => {
         <div className={styles.divider}></div>
 
         <div className={styles.bottom}>
-          <p 
-            className={styles.built} 
-            dangerouslySetInnerHTML={createMarkup(t.footer.built)}
-          />
+          <p className={styles.built}>
+            {parse(t.footer.built)}
+          </p>
         </div>
       </div>
     </footer>

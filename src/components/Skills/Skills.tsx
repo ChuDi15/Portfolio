@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useMemo } from 'react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import styles from './Skills.module.scss';
 
@@ -13,7 +13,7 @@ const Skills = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
-  const skills: Skill[] = [
+  const skills: Skill[] = useMemo(() => [
     { name: 'React', category: t.skills.categories.Frontend, icon: '⚛️' },
     { name: 'Angular', category: t.skills.categories.Frontend, icon: '🅰️' },
     { name: 'TypeScript', category: t.skills.categories.Language, icon: '📘' },
@@ -29,7 +29,7 @@ const Skills = () => {
     { name: 'Scrum', category: t.skills.categories.Methodology, icon: '🔄' },
     { name: 'REST API', category: t.skills.categories.Backend, icon: '🔌' },
     { name: 'Docker', category: t.skills.categories.DevOps, icon: '🐳' },
-  ];
+  ], [t]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(

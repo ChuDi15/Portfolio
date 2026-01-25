@@ -1,5 +1,5 @@
 import { Suspense, lazy } from 'react';
-import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
+import { LanguageProvider } from './contexts/LanguageContext';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Hero from './components/Hero/Hero';
@@ -12,14 +12,11 @@ const Experience = lazy(() => import('./components/Experience/Experience'));
 const Projects = lazy(() => import('./components/Projects/Projects'));
 const Contact = lazy(() => import('./components/Contact/Contact'));
 
-const SectionLoader = () => {
-  const { t } = useLanguage();
-  return (
-    <div className="sectionLoader">
-      {t.common.loading}
-    </div>
-  );
-};
+const SectionLoader = () => (
+  <div className="sectionLoader">
+    Loading...
+  </div>
+);
 
 function AppContent() {
   return (

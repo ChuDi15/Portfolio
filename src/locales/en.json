@@ -11,7 +11,7 @@
     }
   },
   "hero": {
-    "greeting": "Hello, I'm Daniel Benitez Abellan",
+    "greeting": "Hello, I'm Daniel Benítez Abellán",
     "title": "Software Developer",
     "typewriter": "React | Angular | Nest.js | TypeScript",
     "description": "Passionate full-stack developer specializing in modern web technologies. Building scalable applications with clean code and best practices.",
@@ -91,7 +91,7 @@
       {
         "title": "Software Developer",
         "company": "Globant",
-        "period": "Sep 2024 - Present · 1 year 5 months",
+        "period": "Sep 2024 - Aug 2025",
         "description": [
           "Working at Iberia, learning new technologies such as Angular, Tailwind, Node.js, and Cypress",
           "Focused on clean code practices, refactoring legacy code and improving project quality",

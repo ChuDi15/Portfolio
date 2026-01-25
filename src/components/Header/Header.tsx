@@ -122,9 +122,9 @@ const Header = () => {
           >
             {t.header.nav.contact}
           </button>
+          
+          <LanguageSelector />
         </nav>
-        
-        <LanguageSelector />
       </div>
     </header>
   );

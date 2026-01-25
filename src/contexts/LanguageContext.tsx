@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect, type ReactNode } from 'react';
+import { createContext, useContext, useState, type ReactNode } from 'react';
 import en from '../locales/en.json';
 import es from '../locales/es.json';
 
@@ -17,15 +17,14 @@ const translations = {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [language, setLanguageState] = useState<Language>('es');
+const getInitialLanguage = (): Language => {
+  if (typeof window === 'undefined') return 'es';
+  const savedLanguage = localStorage.getItem('language');
+  return savedLanguage === 'en' || savedLanguage === 'es' ? savedLanguage : 'es';
+};
 
-  useEffect(() => {
-    const savedLanguage = localStorage.getItem('language') as Language;
-    if (savedLanguage && (savedLanguage === 'en' || savedLanguage === 'es')) {
-      setLanguageState(savedLanguage);
-    }
-  }, []);
+export const LanguageProvider = ({ children }: { children: ReactNode }) => {
+  const [language, setLanguageState] = useState<Language>(getInitialLanguage);
 
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
