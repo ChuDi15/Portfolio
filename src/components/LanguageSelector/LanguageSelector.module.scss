@@ -1,0 +1,70 @@
+.languageSelector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(74, 144, 226, 0.3);
+  }
+}
+
+.langBtn {
+  background: none;
+  border: none;
+  color: #808080;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  position: relative;
+
+  &:hover {
+    color: #FFFFFF;
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  &.active {
+    color: #4A90E2;
+    background: rgba(74, 144, 226, 0.1);
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #4A90E2, transparent);
+      border-radius: 2px;
+    }
+  }
+}
+
+.separator {
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 14px;
+  font-weight: 300;
+}
+
+// Mobile responsive
+@media (max-width: 768px) {
+  .languageSelector {
+    padding: 6px 10px;
+    gap: 6px;
+  }
+
+  .langBtn {
+    font-size: 13px;
+    padding: 3px 6px;
+  }
+}

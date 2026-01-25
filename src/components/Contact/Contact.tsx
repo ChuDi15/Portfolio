@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react';
 import emailjs from '@emailjs/browser';
+import { useLanguage } from '../../contexts/LanguageContext';
 import styles from './Contact.module.scss';
 
 const Contact = () => {
+  const { t } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
   const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
   const [formData, setFormData] = useState({
@@ -47,7 +49,6 @@ const Contact = () => {
     setFormStatus('sending');
 
     try {
-      // EmailJS configuration from environment variables
       const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
       const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
       const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
@@ -83,9 +84,9 @@ const Contact = () => {
       ref={sectionRef}
     >
       <div className={styles.container}>
-        <h2 className={styles.title}>Get In Touch</h2>
+        <h2 className={styles.title}>{t.contact.title}</h2>
         <p className={styles.subtitle}>
-          Let's discuss our
+          {t.contact.subtitle}
         </p>
 
         <div className={styles.content}>
@@ -94,19 +95,19 @@ const Contact = () => {
 
             <div className={styles.infoCard}>
               <div className={styles.cardIcon}>💼</div>
-              <h3 className={styles.cardTitle}>LinkedIn</h3>
-              <p className={styles.cardText}>Connect with me</p>
+              <h3 className={styles.cardTitle}>{t.contact.info.linkedin.title}</h3>
+              <p className={styles.cardText}>{t.contact.info.linkedin.text}</p>
               <a href="https://www.linkedin.com/in/daniel-ben%C3%ADtez-abell%C3%A1n-10108a106/" className={styles.cardLink}>
-                View profile →
+                {t.contact.info.linkedin.link} →
               </a>
             </div>
 
             <div className={styles.infoCard}>
               <div className={styles.cardIcon}>💻</div>
-              <h3 className={styles.cardTitle}>GitHub</h3>
-              <p className={styles.cardText}>Check out my code</p>
+              <h3 className={styles.cardTitle}>{t.contact.info.github.title}</h3>
+              <p className={styles.cardText}>{t.contact.info.github.text}</p>
               <a href="#" className={styles.cardLink}>
-                View repositories →
+                {t.contact.info.github.link} →
               </a>
             </div>
           </div>
@@ -115,14 +116,14 @@ const Contact = () => {
             <form className={styles.form} ref={formRef} onSubmit={handleSubmit}>
               <div className={styles.formGroup}>
                 <label htmlFor="name" className={styles.label}>
-                  Name
+                  {t.contact.form.name.label}
                 </label>
                 <input
                   type="text"
                   id="name"
                   name="name"
                   className={styles.input}
-                  placeholder="John Doe"
+                  placeholder={t.contact.form.name.placeholder}
                   value={formData.name}
                   onChange={handleChange}
                   required
@@ -131,14 +132,14 @@ const Contact = () => {
 
               <div className={styles.formGroup}>
                 <label htmlFor="email" className={styles.label}>
-                  Email
+                  {t.contact.form.email.label}
                 </label>
                 <input
                   type="email"
                   id="email"
                   name="email"
                   className={styles.input}
-                  placeholder="john@example.com"
+                  placeholder={t.contact.form.email.placeholder}
                   value={formData.email}
                   onChange={handleChange}
                   required
@@ -147,14 +148,14 @@ const Contact = () => {
 
               <div className={styles.formGroup}>
                 <label htmlFor="subject" className={styles.label}>
-                  Subject
+                  {t.contact.form.subject.label}
                 </label>
                 <input
                   type="text"
                   id="subject"
                   name="subject"
                   className={styles.input}
-                  placeholder="Project Inquiry"
+                  placeholder={t.contact.form.subject.placeholder}
                   value={formData.subject}
                   onChange={handleChange}
                   required
@@ -163,14 +164,14 @@ const Contact = () => {
 
               <div className={styles.formGroup}>
                 <label htmlFor="message" className={styles.label}>
-                  Message
+                  {t.contact.form.message.label}
                 </label>
                 <textarea
                   id="message"
                   name="message"
                   className={styles.textarea}
                   rows={5}
-                  placeholder="Tell me about your project..."
+                  placeholder={t.contact.form.message.placeholder}
                   value={formData.message}
                   onChange={handleChange}
                   required
@@ -183,10 +184,10 @@ const Contact = () => {
                 disabled={formStatus === 'sending'}
               >
                 <span>
-                  {formStatus === 'sending' ? 'Sending...' : 
-                   formStatus === 'success' ? 'Message Sent!' : 
-                   formStatus === 'error' ? 'Error - Try Again' : 
-                   'Send Message'}
+                  {formStatus === 'sending' ? t.contact.form.sending : 
+                   formStatus === 'success' ? t.contact.form.success : 
+                   formStatus === 'error' ? t.contact.form.error : 
+                   t.contact.form.submit}
                 </span>
                 <span className={styles.btnIcon}>
                   {formStatus === 'success' ? '✓' : '✉️'}
@@ -197,7 +198,7 @@ const Contact = () => {
             <div className={styles.availability}>
               <div className={styles.statusIndicator}>
                 <div className={styles.pulse}></div>
-                <span>Available for freelance opportunities</span>
+                <span>{t.contact.availability}</span>
               </div>
             </div>
           </div>
