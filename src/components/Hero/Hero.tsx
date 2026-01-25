@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
+import { useLanguage } from '../../contexts/LanguageContext';
 import styles from './Hero.module.scss';
 
 const Hero = () => {
+  const { t } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -25,31 +27,30 @@ const Hero = () => {
       <div className={`${styles.container} ${isVisible ? styles.visible : ''}`}>
         <div className={styles.content}>
           <div className={styles.greeting}>
-            <span className={styles.wave}>👋</span> Hello, I'm Daniel Benitez Abellan
+            <span className={styles.wave}>👋</span> {t.hero.greeting}
           </div>
           
           <h1 className={styles.title}>
-            <span className={styles.name}>Software Developer</span>
+            <span className={styles.name}>{t.hero.title}</span>
           </h1>
 
           <div className={styles.typewriter}>
-            <span className={styles.typed}>React | Angular | Nest.js | TypeScript</span>
+            <span className={styles.typed}>{t.hero.typewriter}</span>
           </div>
 
           <p className={styles.description}>
-            Passionate full-stack developer specializing in modern web technologies.
-            Building scalable applications with clean code and best practices.
+            {t.hero.description}
           </p>
 
           <div className={styles.cta}>
             <button className={styles.btnPrimary} onClick={scrollToContact}>
-              Get In Touch
+              {t.hero.cta.contact}
             </button>
             <button 
               className={styles.btnOutline}
               onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              View Projects
+              {t.hero.cta.projects}
             </button>
           </div>
         </div>
@@ -95,7 +96,7 @@ const Hero = () => {
         <div className={styles.mouse}>
           <div className={styles.wheel}></div>
         </div>
-        <p>Scroll down</p>
+        <p>{t.hero.scrollDown}</p>
       </div>
     </section>
   );

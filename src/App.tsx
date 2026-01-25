@@ -1,25 +1,27 @@
 import { Suspense, lazy } from 'react';
+import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Hero from './components/Hero/Hero';
 import './styles/global.scss';
 import './App.css';
 
-// Lazy load sections for better performance (React 19 feature)
 const About = lazy(() => import('./components/About/About'));
 const Skills = lazy(() => import('./components/Skills/Skills'));
 const Experience = lazy(() => import('./components/Experience/Experience'));
 const Projects = lazy(() => import('./components/Projects/Projects'));
 const Contact = lazy(() => import('./components/Contact/Contact'));
 
-// Loading component
-const SectionLoader = () => (
-  <div className="sectionLoader">
-    Loading...
-  </div>
-);
+const SectionLoader = () => {
+  const { t } = useLanguage();
+  return (
+    <div className="sectionLoader">
+      {t.common.loading}
+    </div>
+  );
+};
 
-function App() {
+function AppContent() {
   return (
     <div className="app">
       <Header />
@@ -50,6 +52,14 @@ function App() {
       
       <Footer />
     </div>
+  );
+}
+
+function App() {
+  return (
+    <LanguageProvider>
+      <AppContent />
+    </LanguageProvider>
   );
 }
 

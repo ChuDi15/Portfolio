@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react';
+import { useLanguage } from '../../contexts/LanguageContext';
+import LanguageSelector from '../LanguageSelector/LanguageSelector';
 import styles from './Header.module.scss';
 
 const Header = () => {
+  const { t } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
@@ -69,7 +72,7 @@ const Header = () => {
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
       <div className={styles.container}>
         <div className={styles.logo}>
-          <span className={styles.logoText}>&lt;Dev/&gt;</span>
+          <span className={styles.logoText}>{t.header.logo}</span>
         </div>
 
         <button 
@@ -87,39 +90,41 @@ const Header = () => {
             onClick={() => scrollToSection('hero')}
             className={activeSection === 'hero' ? styles.activeLink : ''}
           >
-            Home
+            {t.header.nav.home}
           </button>
           <button 
             onClick={() => scrollToSection('about')}
             className={activeSection === 'about' ? styles.activeLink : ''}
           >
-            About
+            {t.header.nav.about}
           </button>
           <button 
             onClick={() => scrollToSection('skills')}
             className={activeSection === 'skills' ? styles.activeLink : ''}
           >
-            Skills
+            {t.header.nav.skills}
           </button>
           <button 
             onClick={() => scrollToSection('experience')}
             className={activeSection === 'experience' ? styles.activeLink : ''}
           >
-            Experience
+            {t.header.nav.experience}
           </button>
           <button 
             onClick={() => scrollToSection('projects')}
             className={activeSection === 'projects' ? styles.activeLink : ''}
           >
-            Projects
+            {t.header.nav.projects}
           </button>
           <button 
             onClick={() => scrollToSection('contact')}
             className={activeSection === 'contact' ? styles.activeLink : ''}
           >
-            Contact
+            {t.header.nav.contact}
           </button>
         </nav>
+        
+        <LanguageSelector />
       </div>
     </header>
   );

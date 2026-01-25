@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { useLanguage } from '../../contexts/LanguageContext';
 import styles from './Skills.module.scss';
 
 interface Skill {
@@ -8,25 +9,26 @@ interface Skill {
 }
 
 const Skills = () => {
+  const { t } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
   const skills: Skill[] = [
-    { name: 'React', category: 'Frontend', icon: '⚛️' },
-    { name: 'Angular', category: 'Frontend', icon: '🅰️' },
-    { name: 'TypeScript', category: 'Language', icon: '📘' },
-    { name: 'JavaScript', category: 'Language', icon: '📜' },
-    { name: 'Nest.js', category: 'Backend', icon: '🦅' },
-    { name: 'Node.js', category: 'Backend', icon: '🟢' },
-    { name: 'CSS/SCSS', category: 'Frontend', icon: '🎨' },
-    { name: 'HTML5', category: 'Frontend', icon: '🌐' },
-    { name: 'AWS', category: 'Cloud', icon: '☁️' },
-    { name: 'Java', category: 'Backend', icon: '☕' },
-    { name: 'Cypress', category: 'Testing', icon: '🧪' },
-    { name: 'Git', category: 'Tools', icon: '📦' },
-    { name: 'Scrum', category: 'Methodology', icon: '🔄' },
-    { name: 'REST API', category: 'Backend', icon: '🔌' },
-    { name: 'Docker', category: 'DevOps', icon: '🐳' },
+    { name: 'React', category: t.skills.categories.Frontend, icon: '⚛️' },
+    { name: 'Angular', category: t.skills.categories.Frontend, icon: '🅰️' },
+    { name: 'TypeScript', category: t.skills.categories.Language, icon: '📘' },
+    { name: 'JavaScript', category: t.skills.categories.Language, icon: '📜' },
+    { name: 'Nest.js', category: t.skills.categories.Backend, icon: '🦅' },
+    { name: 'Node.js', category: t.skills.categories.Backend, icon: '🟢' },
+    { name: 'CSS/SCSS', category: t.skills.categories.Frontend, icon: '🎨' },
+    { name: 'HTML5', category: t.skills.categories.Frontend, icon: '🌐' },
+    { name: 'AWS', category: t.skills.categories.Cloud, icon: '☁️' },
+    { name: 'Java', category: t.skills.categories.Backend, icon: '☕' },
+    { name: 'Cypress', category: t.skills.categories.Testing, icon: '🧪' },
+    { name: 'Git', category: t.skills.categories.Tools, icon: '📦' },
+    { name: 'Scrum', category: t.skills.categories.Methodology, icon: '🔄' },
+    { name: 'REST API', category: t.skills.categories.Backend, icon: '🔌' },
+    { name: 'Docker', category: t.skills.categories.DevOps, icon: '🐳' },
   ];
 
   useEffect(() => {
@@ -57,9 +59,9 @@ const Skills = () => {
       ref={sectionRef}
     >
       <div className={styles.container}>
-        <h2 className={styles.title}>Technical Skills</h2>
+        <h2 className={styles.title}>{t.skills.title}</h2>
         <p className={styles.subtitle}>
-          Technologies and tools I use to bring ideas to life
+          {t.skills.subtitle}
         </p>
 
         <div className={styles.grid}>
@@ -80,36 +82,22 @@ const Skills = () => {
         </div>
 
         <div className={styles.expertise}>
-          <h3 className={styles.expertiseTitle}>Core Competencies</h3>
+          <h3 className={styles.expertiseTitle}>{t.skills.expertise.title}</h3>
           <div className={styles.expertiseList}>
-            <div className={styles.expertiseItem}>
-              <div className={styles.expertiseIcon}>💻</div>
-              <div className={styles.expertiseContent}>
-                <h4>Frontend Development</h4>
-                <p>Building responsive and interactive user interfaces with React and Angular</p>
+            {t.skills.expertise.items.map((item, index) => (
+              <div key={index} className={styles.expertiseItem}>
+                <div className={styles.expertiseIcon}>
+                  {index === 0 && '💻'}
+                  {index === 1 && '⚙️'}
+                  {index === 2 && '🚀'}
+                  {index === 3 && '🎯'}
+                </div>
+                <div className={styles.expertiseContent}>
+                  <h4>{item.title}</h4>
+                  <p>{item.description}</p>
+                </div>
               </div>
-            </div>
-            <div className={styles.expertiseItem}>
-              <div className={styles.expertiseIcon}>⚙️</div>
-              <div className={styles.expertiseContent}>
-                <h4>Backend Development</h4>
-                <p>Creating scalable APIs and services with Nest.js and Java</p>
-              </div>
-            </div>
-            <div className={styles.expertiseItem}>
-              <div className={styles.expertiseIcon}>🚀</div>
-              <div className={styles.expertiseContent}>
-                <h4>DevOps & Deployment</h4>
-                <p>Managing CI/CD pipelines and cloud infrastructure on AWS</p>
-              </div>
-            </div>
-            <div className={styles.expertiseItem}>
-              <div className={styles.expertiseIcon}>🎯</div>
-              <div className={styles.expertiseContent}>
-                <h4>Agile Methodologies</h4>
-                <p>Working with Scrum framework and best development practices</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>

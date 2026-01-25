@@ -1,7 +1,13 @@
+import { useLanguage } from '../../contexts/LanguageContext';
 import styles from './Footer.module.scss';
 
 const Footer = () => {
+  const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
+
+  const createMarkup = (html: string) => {
+    return { __html: html };
+  };
 
   return (
     <footer className={styles.footer}>
@@ -9,7 +15,7 @@ const Footer = () => {
         <div className={styles.content}>
           <div className={styles.left}>
             <p className={styles.copyright}>
-              © {currentYear} <span className={styles.highlight}>Developer Portfolio</span>. All rights reserved.
+              © {currentYear} <span className={styles.highlight}>{t.footer.copyright}</span>
             </p>
           </div>
 
@@ -31,7 +37,10 @@ const Footer = () => {
         <div className={styles.divider}></div>
 
         <div className={styles.bottom}>
-          <p className={styles.built}>Built with <span className={styles.heart}>♥</span> using React 19 & TypeScript</p>
+          <p 
+            className={styles.built} 
+            dangerouslySetInnerHTML={createMarkup(t.footer.built)}
+          />
         </div>
       </div>
     </footer>

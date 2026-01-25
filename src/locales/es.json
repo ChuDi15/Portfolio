@@ -1,0 +1,223 @@
+{
+  "header": {
+    "logo": "<Dev/>",
+    "nav": {
+      "home": "Inicio",
+      "about": "Acerca",
+      "skills": "Skills",
+      "experience": "Trayectoria",
+      "projects": "Proyectos",
+      "contact": "Contacto"
+    }
+  },
+  "hero": {
+    "greeting": "Hola, soy Daniel Benítez Abellán",
+    "title": "Desarrollador de Software",
+    "typewriter": "React | Angular | Nest.js | TypeScript",
+    "description": "Desarrollador full-stack apasionado especializado en tecnologías web modernas. Construyendo aplicaciones escalables con código limpio y buenas prácticas.",
+    "cta": {
+      "contact": "Contáctame",
+      "projects": "Ver Proyectos"
+    },
+    "scrollDown": "Desplázate hacia abajo"
+  },
+  "about": {
+    "title": "Sobre Mí",
+    "subtitle": "Desarrollador Full-Stack",
+    "description": [
+      "Mientras trabajaba para <span class='highlight'>Iberia</span> en el departamento Tech, participé en el desarrollo de aplicaciones para operadores, adaptándome al stack tecnológico específico de cada aplicación, utilizando tanto <span class='highlight'>React</span> como <span class='highlight'>Angular</span>.",
+      "También mejoré y mantuve servicios backend con <span class='highlight'>Nest.js</span> y <span class='highlight'>Java</span>, poniendo un fuerte énfasis en mantener una alta cobertura de pruebas unitarias así como pruebas de integración con Cypress.",
+      "Aprendí sobre flujos de despliegue y fui responsable del desarrollo y despliegue completo de una aplicación para Iberia Tech, supervisando tanto la implementación como el proceso de despliegue, así como el seguimiento y monitoreo de datos post-despliegue en <span class='highlight'>AWS</span>.",
+      "Esta experiencia me ayudó a madurar rápidamente como desarrollador, enfrentando desafíos cada vez más complejos y resolviéndolos consistentemente con eficiencia y buenas prácticas. Todo esto llevó a una rápida promoción a <span class='highlight'>Junior Advanced</span>."
+    ],
+    "stats": {
+      "experience": "Años de Experiencia",
+      "projects": "Proyectos Completados",
+      "technologies": "Tecnologías"
+    }
+  },
+  "skills": {
+    "title": "Habilidades Técnicas",
+    "subtitle": "Tecnologías y herramientas que uso para dar vida a las ideas",
+    "categories": {
+      "Frontend": "Frontend",
+      "Backend": "Backend",
+      "Language": "Lenguaje",
+      "Cloud": "Nube",
+      "Testing": "Testing",
+      "Tools": "Herramientas",
+      "Methodology": "Metodología",
+      "DevOps": "DevOps"
+    },
+    "expertise": {
+      "title": "Competencias Principales",
+      "items": [
+        {
+          "title": "Desarrollo Frontend",
+          "description": "Construcción de interfaces de usuario responsivas e interactivas con React y Angular"
+        },
+        {
+          "title": "Desarrollo Backend",
+          "description": "Creación de APIs y servicios escalables con Nest.js y Java"
+        },
+        {
+          "title": "DevOps y Despliegue",
+          "description": "Gestión de pipelines CI/CD e infraestructura en la nube en AWS"
+        },
+        {
+          "title": "Metodologías Ágiles",
+          "description": "Trabajo con framework Scrum y mejores prácticas de desarrollo"
+        }
+      ]
+    }
+  },
+  "experience": {
+    "title": "Experiencia Profesional",
+    "subtitle": "Mi trayectoria como desarrollador de software",
+    "items": [
+      {
+        "title": "Desarrollador de Software - Junior Advanced",
+        "company": "Globant (en Iberia Tech)",
+        "period": "Ago 2025 - Presente",
+        "description": [
+          "Desarrollo de aplicaciones para operadores usando React y Angular, adaptándome a stacks tecnológicos específicos",
+          "Mejora y mantenimiento de servicios backend con Nest.js y Java",
+          "Fuerte énfasis en cobertura de pruebas unitarias y testing de integración con Cypress",
+          "Desarrollo y despliegue completo de aplicaciones, incluyendo monitoreo en AWS",
+          "Rápida promoción a Junior Advanced debido a entregas consistentes y buenas prácticas"
+        ],
+        "technologies": ["React", "Angular", "Nest.js", "Java", "TypeScript", "Cypress", "AWS"]
+      },
+      {
+        "title": "Desarrollador de Software",
+        "company": "Globant",
+        "period": "Sep 2024 - Presente · 1 año 5 meses",
+        "description": [
+          "Trabajando en Iberia, aprendiendo nuevas tecnologías como Angular, Tailwind, Node.js y Cypress",
+          "Enfocado en prácticas de código limpio, refactorizando código legacy y mejorando la calidad del proyecto",
+          "Añadiendo nuevas funcionalidades y cobertura completa de pruebas unitarias",
+          "Desarrollé curiosidad full-stack, aprendiendo Nest.js y entendiendo la infraestructura del proyecto",
+          "Dominé el testing E2E con Cypress.io y la gestión de flujos de despliegue"
+        ],
+        "technologies": ["Angular", "React", "Vite", "Tailwind", "Node.js", "Nest.js", "Cypress", "TypeScript"]
+      },
+      {
+        "title": "Desarrollador Front-end",
+        "company": "Solera España",
+        "period": "Oct 2022 - Oct 2023 · 1 año 1 mes",
+        "description": [
+          "Trabajé en aplicación de seguros privados con equipo basado en Finlandia",
+          "Desarrollo frontend usando React con Redux para gestión de estado",
+          "Implementé componentes UI con SASS para estilos",
+          "Colaboré en entorno ágil con equipo internacional",
+          "Aseguramiento de calidad de código con SonarQube"
+        ],
+        "technologies": ["React", "Redux", "SASS", "SonarQube", "JavaScript", "Git"]
+      },
+      {
+        "title": "Desarrollador Web Full-stack",
+        "company": "SITELICON ECOMMERCE SERVICES",
+        "period": "Mar 2022 - Jun 2022 · 4 meses",
+        "description": [
+          "Posición de prácticas (FCT - Grado Superior)",
+          "Desarrollo full-stack con PHP y JavaScript",
+          "Desarrollo y mantenimiento de plataforma e-commerce",
+          "Aprendí flujos de trabajo de desarrollo profesional y buenas prácticas",
+          "Colaboración remota con equipo de desarrollo"
+        ],
+        "technologies": ["PHP", "JavaScript", "HTML", "CSS", "MySQL", "Git"]
+      }
+    ]
+  },
+  "projects": {
+    "title": "Proyectos Destacados",
+    "subtitle": "Una selección de proyectos que muestran mi experiencia técnica",
+    "categories": {
+      "all": "Todos",
+      "Web App": "Aplicación Web",
+      "Dashboard": "Dashboard",
+      "Backend": "Backend",
+      "DevOps": "DevOps",
+      "Library": "Librería"
+    },
+    "items": [
+      {
+        "title": "Sistema de Gestión de Operadores",
+        "description": "Aplicación web completa para operadores de Iberia con sincronización de datos en tiempo real, construida con React e integrada con servicios backend.",
+        "technologies": ["React", "TypeScript", "REST API"],
+        "category": "Web App"
+      },
+      {
+        "title": "Dashboard de Seguimiento de Vuelos",
+        "description": "Dashboard de monitoreo de vuelos en tiempo real con visualización de datos interactiva y sistemas de alerta para operaciones de aviación.",
+        "technologies": ["Angular", "RxJS", "PrimeNG", "WebSocket"],
+        "category": "Dashboard"
+      },
+      {
+        "title": "Gateway de API de Microservicios",
+        "description": "Gateway de API escalable construido con Nest.js para manejar múltiples microservicios, con autenticación y limitación de tasa.",
+        "technologies": ["Nest.js", "Node.js", "PostgreSQL", "Docker"],
+        "category": "Backend"
+      },
+      {
+        "title": "Herramienta de Automatización de Despliegue",
+        "description": "Herramienta personalizada de pipeline de despliegue para infraestructura AWS con capacidades de monitoreo y rollback.",
+        "technologies": ["AWS", "Lambda", "CloudFormation", "Node.js"],
+        "category": "DevOps"
+      },
+      {
+        "title": "Plataforma de E-Commerce",
+        "description": "Solución e-commerce full-stack con integración de pagos, gestión de inventario y panel de administración.",
+        "technologies": ["React", "Nest.js", "MongoDB", "Stripe"],
+        "category": "Web App"
+      }
+    ],
+    "viewDetails": "Ver Detalles"
+  },
+  "contact": {
+    "title": "Ponte en Contacto",
+    "subtitle": "¡Hablemos sobre nuestro próximo proyecto juntos!",
+    "info": {
+      "linkedin": {
+        "title": "LinkedIn",
+        "text": "Conéctate conmigo",
+        "link": "Ver perfil"
+      },
+      "github": {
+        "title": "GitHub",
+        "text": "Mira mi código",
+        "link": "Ver repositorios"
+      }
+    },
+    "form": {
+      "name": {
+        "label": "Nombre",
+        "placeholder": "Juan Pérez"
+      },
+      "email": {
+        "label": "Correo electrónico",
+        "placeholder": "juan@ejemplo.com"
+      },
+      "subject": {
+        "label": "Asunto",
+        "placeholder": "Consulta de Proyecto"
+      },
+      "message": {
+        "label": "Mensaje",
+        "placeholder": "Cuéntame sobre tu proyecto..."
+      },
+      "submit": "Enviar Mensaje",
+      "sending": "Enviando...",
+      "success": "¡Mensaje Enviado!",
+      "error": "Error - Inténtalo de Nuevo"
+    },
+    "availability": "Disponible para oportunidades freelance"
+  },
+  "footer": {
+    "copyright": "Portafolio de Desarrollador. Todos los derechos reservados.",
+    "built": "Construido con <span class='heart'>♥</span> usando React 19 y TypeScript"
+  },
+  "common": {
+    "loading": "Cargando..."
+  }
+}
