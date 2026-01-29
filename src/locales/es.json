@@ -62,7 +62,7 @@
         },
         {
           "title": "DevOps y Despliegue",
-          "description": "Gestión de pipelines CI/CD e infraestructura en la nube en AWS"
+          "description": "Gestión de pipelines CI/CD y Despliegues"
         },
         {
           "title": "Metodologías Ágiles",
@@ -158,12 +158,6 @@
         "description": "Gateway de API escalable construido con Nest.js para manejar múltiples microservicios, con autenticación y limitación de tasa.",
         "technologies": ["Nest.js", "Node.js", "PostgreSQL", "Docker"],
         "category": "Backend"
-      },
-      {
-        "title": "Herramienta de Automatización de Despliegue",
-        "description": "Herramienta personalizada de pipeline de despliegue para infraestructura AWS con capacidades de monitoreo y rollback.",
-        "technologies": ["AWS", "Lambda", "CloudFormation", "Node.js"],
-        "category": "DevOps"
       },
       {
         "title": "Plataforma de E-Commerce",

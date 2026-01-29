@@ -62,7 +62,7 @@
         },
         {
           "title": "DevOps & Deployment",
-          "description": "Managing CI/CD pipelines and cloud infrastructure on AWS"
+          "description": "Managing CI/CD pipelines & Deployments"
         },
         {
           "title": "Agile Methodologies",
@@ -142,33 +142,27 @@
     },
     "items": [
       {
-        "title": "Operator Management System",
-        "description": "Complete web application for Iberia operators with real-time data synchronization, built with React and integrated with backend services.",
-        "technologies": ["React", "TypeScript", "REST API"],
+        "title": "Flight Disruption Management System",
+        "description": "Complete application for managing flight disruptions, enabling automatic reaccommodation of passengers and baggage on new flights. Critical system that processes real-time information to minimize the impact of interruptions on passengers.",
+        "technologies": ["React", "Angular", "TypeScript", "Nest.js", "AWS"],
         "category": "Web App"
       },
       {
-        "title": "Flight Tracking Dashboard",
-        "description": "Real-time flight monitoring dashboard with interactive data visualization and alert systems for aviation operations.",
-        "technologies": ["Angular", "RxJS", "PrimeNG", "WebSocket"],
-        "category": "Dashboard"
-      },
-      {
-        "title": "Microservices API Gateway",
-        "description": "Scalable API gateway built with Nest.js for handling multiple microservices, with authentication and rate limiting.",
-        "technologies": ["Nest.js", "Node.js", "PostgreSQL", "Docker"],
+        "title": "Passenger Voucher API & Portal",
+        "description": "RESTful API with web interface for generating and managing compensatory vouchers granted to passengers affected by disruptions. Includes validation system, voucher redemption, and administrative reporting.",
+        "technologies": ["Nest.js", "Java", "Angular", "PostgreSQL", "REST API"],
         "category": "Backend"
       },
       {
-        "title": "Deployment Automation Tool",
-        "description": "Custom deployment pipeline tool for AWS infrastructure with monitoring and rollback capabilities.",
-        "technologies": ["AWS", "Lambda", "CloudFormation", "Node.js"],
-        "category": "DevOps"
+        "title": "Iberia Operator Applications",
+        "description": "Development of multiple applications for flight operators with specific functionalities adapted to different departments, using varied technology stacks according to project needs.",
+        "technologies": ["React", "Angular", "TypeScript", "Cypress", "Tailwind"],
+        "category": "Web App"
       },
       {
         "title": "E-Commerce Platform",
-        "description": "Full-stack e-commerce solution with payment integration, inventory management, and admin dashboard.",
-        "technologies": ["React", "Nest.js", "MongoDB", "Stripe"],
+        "description": "E-commerce solution developed during professional internship with inventory management, product catalog, and complete admin dashboard.",
+        "technologies": ["PHP", "JavaScript", "MySQL", "HTML", "CSS"],
         "category": "Web App"
       }
     ],

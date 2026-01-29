@@ -18,9 +18,9 @@ const translations = {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 const getInitialLanguage = (): Language => {
-  if (typeof window === 'undefined') return 'es';
+  if (typeof window === 'undefined') return 'en';
   const savedLanguage = localStorage.getItem('language');
-  return savedLanguage === 'en' || savedLanguage === 'es' ? savedLanguage : 'es';
+  return savedLanguage === 'en' || savedLanguage === 'es' ? savedLanguage : 'en';
 };
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
