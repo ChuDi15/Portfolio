@@ -116,17 +116,14 @@
 
       .card {
         &::before {
-          left: auto;
-          right: -20px;
-          border-left: 20px solid $color-gray;
-          border-right: none;
+          left: -20px;
+          right: auto;
+          border-right: 20px solid $color-gray;
+          border-left: none;
+        }
 
-          @include respond-to('md') {
-            left: -20px;
-            right: auto;
-            border-left: none;
-            border-right: 20px solid $color-gray;
-          }
+        &:hover::before {
+          border-right-color: $color-blue-metallic;
         }
       }
     }
@@ -205,13 +202,15 @@
   &::before {
     content: '';
     position: absolute;
-    left: -20px;
+    left: auto;
+    right: -20px;
     top: 20px;
     width: 0;
     height: 0;
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
-    border-right: 20px solid $color-gray;
+    border-left: 20px solid $color-gray;
+    border-right: none;
   }
 
   &:hover {
@@ -220,7 +219,7 @@
     box-shadow: 0 15px 40px rgba($color-blue-metallic, 0.2);
 
     &::before {
-      border-right-color: $color-blue-metallic;
+      border-left-color: $color-blue-metallic;
     }
   }
 }

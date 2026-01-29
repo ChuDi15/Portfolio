@@ -12,51 +12,46 @@ const Header = () => {
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
+      if (menuOpen) {
+        setMenuOpen(false);
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [menuOpen]);
 
   useEffect(() => {
     const sections = ['hero', 'about', 'skills', 'experience', 'projects', 'contact'];
     
-    const observerOptions = {
-      root: null,
-      rootMargin: '-100px 0px -40% 0px',
-      threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5]
-    };
-
-    const observerCallback = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting && entry.intersectionRatio > 0.1) {
-          setActiveSection(entry.target.id);
-        }
-      });
-    };
-
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-    const observeSections = () => {
-      sections.forEach((sectionId) => {
-        const element = document.getElementById(sectionId);
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + window.innerHeight / 3;
+      
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const element = document.getElementById(sections[i]);
         if (element) {
-          observer.observe(element);
+          const elementTop = element.offsetTop;
+          
+          if (i === sections.length - 1 && 
+              window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 100) {
+            setActiveSection(sections[i]);
+            return;
+          }
+          
+          if (scrollPosition >= elementTop) {
+            setActiveSection(sections[i]);
+            return;
+          }
         }
-      });
+      }
     };
 
-    observeSections();
-    const timeoutId = setTimeout(observeSections, 500);
+    handleScroll();
+
+    window.addEventListener('scroll', handleScroll);
 
     return () => {
-      clearTimeout(timeoutId);
-      sections.forEach((sectionId) => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          observer.unobserve(element);
-        }
-      });
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
