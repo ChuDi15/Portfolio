@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, type ReactNode } from 'react';
-import en from '../locales/en.json';
-import es from '../locales/es.json';
+import en from '../translations/en.json';
+import es from '../translations/es.json';
 
 type Language = 'en' | 'es';
 

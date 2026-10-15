@@ -76,9 +76,23 @@
     "subtitle": "Mi trayectoria como desarrollador de software",
     "items": [
       {
+        "title": "Desarrollador de Software - Semi-Senior",
+        "company": "Globant (en Iberia Tech)",
+        "period": "Sep 2026 - Presente",
+        "description": [
+          "Tras un año como Junior Advanced, mi responsabilidad e implicación en el proyecto crecieron progresivamente",
+          "Ampliación hacia backend con Java y Spring Boot, trabajando de extremo a extremo e integrando servicios externos de otras aplicaciones del cliente",
+          "Profundización en AWS: optimización y monitorización de llamadas con CloudWatch, entendiendo el impacto de la infraestructura en el rendimiento y la estabilidad",
+          "Mayor conocimiento de la lógica de negocio, proponiendo alternativas más eficientes y coherentes con la arquitectura; participación en monitorización de acciones manuales, integraciones con Salesforce y evoluciones de los flujos de la aplicación",
+          "Mayor participación en el análisis y la toma de decisiones durante el cambio de Product Owner, ganando una visión más global del producto",
+          "Uso profesional de herramientas de IA integrado en el proceso de desarrollo: analizar, implementar, revisar y mejorar soluciones"
+        ],
+        "technologies": ["Java", "Spring Boot", "React", "Angular", "TypeScript", "AWS", "CloudWatch", "Salesforce"]
+      },
+      {
         "title": "Desarrollador de Software - Junior Advanced",
         "company": "Globant (en Iberia Tech)",
-        "period": "Ago 2025 - Presente",
+        "period": "Ago 2025 - Ago 2026",
         "description": [
           "Desarrollo de aplicaciones para operadores usando React y Angular, adaptándome a stacks tecnológicos específicos",
           "Mejora y mantenimiento de servicios backend con Nest.js y Java",
