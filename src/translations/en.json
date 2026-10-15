@@ -76,9 +76,23 @@
     "subtitle": "My journey as a software developer",
     "items": [
       {
+        "title": "Software Developer - Semi-Senior",
+        "company": "Globant (at Iberia Tech)",
+        "period": "Sep 2026 - Present",
+        "description": [
+          "After a year as Junior Advanced, my responsibility and involvement in the project grew progressively",
+          "Expanded into backend with Java and Spring Boot, working end to end and integrating external services from the client's other applications",
+          "Deepened my AWS knowledge: call optimization and monitoring with CloudWatch, understanding how infrastructure impacts application performance and stability",
+          "Deeper business logic knowledge, proposing more efficient alternatives consistent with the existing architecture; took part in manual action monitoring, Salesforce integrations and application flow evolutions",
+          "Greater involvement in analysis and decision-making during a Product Owner transition, gaining a more global product vision",
+          "Professional use of AI tools integrated into the development process: analyzing, implementing, reviewing and improving solutions"
+        ],
+        "technologies": ["Java", "Spring Boot", "React", "Angular", "TypeScript", "AWS", "CloudWatch", "Salesforce"]
+      },
+      {
         "title": "Software Developer - Junior Advanced",
         "company": "Globant (at Iberia Tech)",
-        "period": "Aug 2025 - Present",
+        "period": "Aug 2025 - Aug 2026",
         "description": [
           "Development of operator applications using React and Angular, adapting to specific technology stacks",
           "Improvement and maintenance of backend services with Nest.js and Java",
