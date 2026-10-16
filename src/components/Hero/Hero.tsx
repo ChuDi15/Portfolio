@@ -65,7 +65,7 @@ const Hero = () => {
               </div>
               <div className={styles.codeLine}>
                 <span className={styles.property}>  name:</span>
-                <span className={styles.string}> 'Software Dev'</span>,
+                <span className={styles.string}> 'Daniel Benitez Abellan'</span>,
               </div>
               <div className={styles.codeLine}>
                 <span className={styles.property}>  skills:</span>
