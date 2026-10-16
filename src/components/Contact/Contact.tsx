@@ -106,7 +106,7 @@ const Contact = () => {
               <div className={styles.cardIcon}>💻</div>
               <h3 className={styles.cardTitle}>{t.contact.info.github.title}</h3>
               <p className={styles.cardText}>{t.contact.info.github.text}</p>
-              <a href="#" className={styles.cardLink}>
+              <a href="https://github.com/ChuDi15" target="_blank" rel="noopener noreferrer" className={styles.cardLink}>
                 {t.contact.info.github.link} →
               </a>
             </div>
